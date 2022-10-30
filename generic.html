@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	.mySlides {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.mySlides2 {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+	}
+</style>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<img src="https://i.pinimg.com/originals/2c/fc/93/2cfc93d7665f5d7728782700e50596e3.png" width="160">
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Portfolio projects</a></li>
+							<li><a href="index.html">CV</a></li>
+							<li class="active"><a href="generic.html">Books recommended</a></li>
+						</ul>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/alberto-fernandez-hernandez-3a3474136/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/AlbertoUAH" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<div id="current_date"></p>
+										<script>
+											date = new Date();
+											year = date.getFullYear();
+											month = date.getMonth() + 1;
+											day = date.getDate();
+											document.getElementById("current_date").innerHTML = day + "/" + month + "/" + year;
+										</script>
+									<h1>Books recommended</h1>
+								</header>
+								<div id="tech_data_science">
+									<h2>Tech/Data Science</h2>
+									<div class="w3-content w3-display-container">
+										<img class="mySlides" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634885350l/59429554._SX318_.jpg" width="300" height="400">
+										<img class="mySlides" src="https://m.media-amazon.com/images/I/51dstfyKrUL.jpg" width="300" height="400">
+										<img class="mySlides" src="https://www.marcombo.com/wp-content/uploads/2019/02/9788426727206.jpg" width="300" height="400">
+
+										<button class="w3-display-left w3-khaki" onclick="plusDivs(-1)">&#10094;</button>
+										<button class="w3-display-right w3-khaki" onclick="plusDivs(+1)">&#10095;</button>
+									</div>
+									<script>
+										var slideIndex = 1;
+										showDivs(slideIndex);
+
+										function plusDivs(n) {
+											showDivs(slideIndex += n);
+										}
+
+										function showDivs(n) {
+											var i;
+											var x = document.getElementsByClassName("mySlides");
+											if (n > x.length) {slideIndex = 1}
+											if (n < 1) {slideIndex = x.length} ;
+											for (i = 0; i < x.length; i++) {
+												x[i].style.display = "none";
+											}
+											x[slideIndex-1].style.display = "block";
+										}
+									</script>
+								</div>
+								<br>
+								<div id="other_topics">
+									<h2>Other topics (economy, geopolitics)</h2>
+									<div class="w3-content w3-display-container">
+										<img class="mySlides2" src="https://images-na.ssl-images-amazon.com/images/I/A1qhBebbu6L.jpg" width="300px" height="400px">
+
+										<button class="w3-display-left w3-khaki" onclick="plusDivs2(-1)">&#10094;</button>
+										<button class="w3-display-right w3-khaki" onclick="plusDivs2(+1)">&#10095;</button>
+									</div>
+									<script>
+										var slideIndex = 1;
+										showDivs2(slideIndex);
+
+										function plusDivs2(n) {
+											showDivs2(slideIndex += n);
+										}
+
+										function showDivs2(n) {
+											var i;
+											var x = document.getElementsByClassName("mySlides2");
+											if (n > x.length) {slideIndex = 1}
+											if (n < 1) {slideIndex = x.length} ;
+											for (i = 0; i < x.length; i++) {
+												x[i].style.display = "none";
+											}
+											x[slideIndex-1].style.display = "block";
+										}
+									</script>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>City</h3>
+								<p>Madrid - Spain 🇪🇸</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(+34) 630 90 67 75</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">albertofernandezh98@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/alberto-fernandez-hernandez-3a3474136/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/AlbertoUAH" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

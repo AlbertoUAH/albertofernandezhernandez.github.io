@@ -1,201 +1,427 @@
 <!DOCTYPE HTML>
 <!--
-	Landed by HTML5 UP
+	Massively by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<style>
+	.circular_image{
+    width:130px;
+    height:170px;
+    border-radius:50%;
+    background-position-y:25% 
+	}
+
+	.circular_image_icons{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-position-y:25% 
+	}
+
+	.section {
+		background: #F45B69;
+	}
+
+	.section .container {
+		width: 90%;
+		max-width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.box {
+		align-items: center;
+		margin:0 auto;
+		background-color: var(--color);
+		color: white;
+		display: flex;
+		justify-content: center;
+		height: 1px;
+		position: relative;
+		width: 220px;
+	}
+
+	.box:before {
+		font-size: 15px;
+		position: relative;
+		justify-content: center;
+		text-transform: uppercase;
+	}
+
+	.box strong {
+		font-size: 15px;
+	}
+
+	ul { 
+		display: inline-block; 
+		text-align: left;
+	}
+
+	p.master-degree span {
+		background-color: #f48024;
+		color: #1d1d1e;
+		border-radius: 10px;
+		padding: 0 5px 0 5px;
+	}
+
+	p.tools span {
+		background-color: #00FF00;
+		color: #1d1d1e;
+		border-radius: 10px;
+		padding: 0 5px 0 5px;
+	}
+
+	.checked {
+		color: orange;
+	}
+
+	.hovertext {
+		position: relative;
+		border-bottom: 1px dotted black;
+	}
+
+	.hovertext:before {
+		content: attr(data-hover);
+		visibility: hidden;
+		opacity: 0;
+		width: 140px;
+		background-color: black;
+		color: #fff;
+		text-align: center;
+		border-radius: 5px;
+		padding: 5px 0;
+		transition: opacity 1s ease-in-out;
+
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 110%;
+	}
+
+	.hovertext:hover:before {
+		opacity: 1;
+		visibility: visible;
+	}
+
+</style>
+<script src="/dist/js/timeline.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+	var email = document.getElementById('email').value;
+	function sendEmail() {
+		Email.send({
+			Host : "smtp.elasticemail.com",
+			Username : "albertofernandezh98@gmail.com",
+    		Password : "09A76F7BB22DABFD9493D289AD6E3FA2ABCE",
+			To : "albertofernandezh98@elasticemail.com",
+			From : "albertofernandezh98@gmail.com",
+			Subject : "This is the subject",
+			Body : "And this is the body"
+		}).then(
+		message => alert(message)
+		);
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="/dist/css/timeline.min.css" rel="stylesheet" />
 <html>
 	<head>
-		<title>Landed by HTML5 UP</title>
+		<title>Massively by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
+	<body class="is-preload">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Landed</a></h1>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Alberto Fernandez Hernandez</h1>
+						<h2>Data Scientist</h2>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="https://github.com/AlbertoUAH" class="logo" target="_blank">
+							<img alt="Qries" src="/images/dinosaur_icon.jpg"
+         width="150" height="150">
+		 <p style="font-size:22px;"> Link to GitHub repository</p>
+						</a>
+					</header>
+
+				<!-- Nav -->
 					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option 1</a></li>
-											<li><a href="#">Option 2</a></li>
-											<li><a href="#">Option 3</a></li>
-											<li><a href="#">Option 4</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
+						<ul class="links">
+							<li class="active"><a href="index.html">Portfolio projects</a></li>
+							<li><a href="cv.html">CV</a></li>
+							<li><a href="generic.html">Books recommended</a></li>
+						</ul>
+						<ul class="icons alt">
+							<li><a href="https://www.linkedin.com/in/alberto-fernandez-hernandez-3a3474136/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/AlbertoUAH" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
-				</header>
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>My Portfolio</h2>
-							<p>"Wihtout data, you're just another person with another opinion"</p>
-							<p>	Edwards Deming</p>
-						</header>
-						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+				<!-- Main -->
+					<div id="main">
+						<!-- Featured Post -->
+						<article class="post featured">
+								<header class="major">
+									<h2> <a href="#"> <br> ABOUT ME</a></h2>
+									<p style="font-family: Courier-New;font-size:1.5vw; text-align: left;"> Analyzing text with NER model...  <img height=55px src="https://avatars.githubusercontent.com/u/25720743?s=200&v=4">  </p>
+									<p class="master-degree"> Data Scientist with <span class="hovertext" data-hover="Masters Degree">MS in Big Data and Business Analytics</span>, using Python for </p>
+									<ul>
+										<li type="disc"> <p class="tools"> <span class="hovertext" data-hover="Tools">Computer Vision</span> + <span class="hovertext" data-hover="Tools">Deep Learning</span> tools for Medical Images classification</p> </li>
+										<li type="disc">  <p class="tools"> <span class="hovertext" data-hover="Tools"> NLP </span> + <span class="hovertext" data-hover="Tools"> Deep Learning </span> tools for text classification </p> </li>
+										<li type="disc">  <p class="tools"> Currently, working with Geospatial data </p> </li>
+									</ul>
+								</header>
+								<section class="section intro">
+									<div class="container">
+									  <h2>Job Experience</h2>
+									</div>
+								</section>
+								<div class="timeline">
+									<div class="timeline__wrap">
+									  <div class="timeline__items">
+										<div class="timeline__item">
+										  <div class="timeline__content">
+											<img src="https://static-s.aa-cdn.net/img/ios/486322953/9d450b13bcbabac8f096db19f13571a9?v=1" class="circular_image_icons"> <br> <b> Correos - Internship (BI) </b>
+											<br>
+											<span>Februrary 2020 - January 2021</span>
+										  </div>
+										</div>
+										<div class="timeline__item">
+										  <div class="timeline__content">
+											<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQH7QBOE8LojuA/company-logo_200_200/0/1652351044910?e=2147483647&v=beta&t=q6MxAmVM9AhrZOLE-hNyqkDm3fUA2dAeS4Mp2KKhypQ" class="circular_image_icons"> <br> <b> Indizen/Scalian Group - Junior Data Scientist </b>
+											<br>
+											<span>Februrary 2021 - August 2022</span>
+										  </div>
+										</div>
+										<div class="timeline__item">
+											<div class="timeline__content">
+											  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Vodafone_icon.svg/239px-Vodafone_icon.svg.png" class="circular_image_icons"> <br> <b> Vodafone - Specialist Data Scientist </b>
+											  <br>
+											  <span>August 2022 - Present</span>
+											</div>
+										  </div>
+									  </div>
+									</div>
+								</div>
+								<script>timeline(document.querySelectorAll('.timeline'));</script>
+							</article>
+						<section class="section skills">
+							<h2 style="text-align: center;"> Language & Framework skills</h2>
+						</section>
+						<p>
+							<center>
+								<table>
+								<h3 style="text-align: center;"> Programming languages </h3>
+								<td align="center" width="25%">
+									<span><b><center>Python</center></b></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span><br/>
+									<img height=75px src="https://img.icons8.com/color/2x/python.png"> 
+								</td>
+								
+								
+								<td align="center" width="30%">
+									<span><b><center>R</center></b></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span><br/>
+									<img height=75px src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png"> 
+								</td>
+								
+								<td align="center" width="25%">
+									<span><b><center>Scala</center></b></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span><br/>
+									<img height=75px src="https://cdn-icons-png.flaticon.com/512/6132/6132220.png"> 
+								</td>
+								
+								<td align="center" width="25%">
+									<span><b><center>Java</center></b></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span><br/> 
+									<img height=75px src="https://cdn-icons-png.flaticon.com/512/226/226777.png"> 
+								</td>
+								</tr>
+								</table>	
+								<table>
+								<h3 style="text-align: center;"> Data Science / ML libraries </h3>
+								<tr>
+								<td align="center" width="25%">
+									<span><b><center>Sklearn</center></b></span>
+									<img height=75px src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png"> 
+								</td>
+								
+								<td align="center" width="25%">
+									<span><b><center>NumPy</center></b></span>
+									<img height=75px src="https://cdn.worldvectorlogo.com/logos/numpy.svg"> 
+								</td>
+								
+								<td align="center" width="25%">
+									<span><b><center>Pandas & GeoPandas</center></b></span>
+									<img height=75px src="https://cdn-icons-png.flaticon.com/512/6485/6485718.png"> 
+								</td>
+								
+								<td align="center" width="25%">
+									<span><b><center>Matplotlib</center></b></span>
+									<img height=75px src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/1200px-Matplotlib_icon.svg.png"/>                             
+								</td>
+								<td align="center" width="25%">
+									<span><b><center>Tidyverse</center></b></span>
+									<img height=75px src="https://soka.gitlab.io/blog/post/2019-10-06-r-tidyverse-intro/images/hex-tidyverse.png"/>                             
+								</td>
+								</tr>
+								</table>
+								<table>
+								<h3 style="text-align: center;"> Deep Learning libraries </h3>
+								<tr>
+								<td align="center" width="25%">
+									<span><b><center>PyTorch</center></b></span>
+									<img height=75px src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/PyTorch_logo_icon.svg/1200px-PyTorch_logo_icon.svg.png"> 
+								</td>
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
+								<td align="center" width="25%">
+									<span><b><center>Tensorflow</center></b></span>
+									<img height=75px src="https://miro.medium.com/max/957/0*69C0hxf9NluTCPVl.png">
+								</td>
+								</td>
+								</tr>
+								</table>
+								<table>
+								<h3 style="text-align: center;"> Cloud Platform </h3>
+								<tr>
+								<td align="center" width="25%">
+									<span><b><center>Google Cloud</center></b></span> <br/>
+									<img height=75px src="https://img.icons8.com/fluency/344/google-logo.png">
+									<br>
+									<ul>
+										<li type="disc"> Cloud Functions </li>
+										<li type="disc"> Dataproc </li>
+									</ul> 
+								</td>   
+								</tr>
+								
+								</tbody>
+								</table>
+							</center>
+						</p>
+						<!-- Portfolio projects -->
+						<section class="section intro">
+							<h2 style="text-align: center;"> Data Science Portfolio Projects</h2>
+						</section>
+							<section class="posts">
+								<article>
 									<header>
-										<h2>Alberto Fernández Hernández</h2>
-										<p>Data Scientist</p>
+										<span class="date">January 30, 2022</span>
+										<div class="box" style="--color: #2db051;">
+										<p style="font-family:courier;"><strong>COMPUTER VISION</strong></p>
+										</div> <h2>Knee lesions classification via deep learning techniques<br /></h2>
 									</header>
-								</div>
-								<div class="col-4 col-12-medium">
-									<ol type=”A”>
-										<li>Computer Vision</li>
-										<li>Text Summarization</li>
-										<li>Time Series Data</li>
-									  </ol>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>The goal is to turn data into information, and information into insight. That's the <keygen>
-									key of Data Science. Data Science is not just making several and several models, thinking real-world can be thought as a Kaggle Competition
-								    where the only meaningful metric is accuracy. 
-									Real Data Science implies define a business problem, which data I need for resolve that problem and once you have it, think of the model which best suites it.
-								</p>
-								</div>
-							</div>
-						</div>
+									<a href="#" class="image fit"><img src="images/knee_mri.gif" alt="" /></a>
+									<p>Knee lesions classification via deep learning techniques, using a transfer-learning model based on Stanford MRI Dataset.</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/AlbertoUAH/Knee-Lesions-Classification-via-Deep-Learning" class="button" target="_blank">Check GitHub repository</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 18, 2022</span>
+										<div class="box"  style="--color: #2db051;">
+										<p style="font-family:courier;"><strong>COMPUTER VISION</strong></p>
+										</div>
+										<h2>Polyps segmentation on colonoscopy images</h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/unet_polyps_segmentation_sample.png" alt=""/></a>
+									<p>Polyps segmentation on colonoscopy images via U-Net architecture.</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/AlbertoUAH/polyps-image-segmentation" class="button" target="_blank">Check GitHub repository</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">July 13, 2022</span>
+										<div class="box"  style="--color: #2db051;">
+										<p style="font-family:courier;"><strong>COMPUTER VISION</strong></p>
+										</div>
+										<h2>GI Tract Segmentation</h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/gi_tract_seg.gif" alt="" /></a>
+									<p>A model to automatically segment the stomach and intestines (small and large) on MRI scans, in order to outline the position of the stomach and intestines to adjust the direction of the x-ray beams to increase the dose delivery to the tumor and avoid main organs.</p>
+									<ul class="actions special">
+										<li><a href="https://github.com/AlbertoUAH/gi-tract-segmentation" class="button" target="_blank">Check GitHub repository</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">July 13, 2022</span>
+										<div class="box" style="--color: #ffa500;">
+										<p style="font-family:courier;"><strong>NLP</strong></p>
+										</div>
+										<h2>Depression posts classification</h2>
+									</header>
+									<a href="#" class="image fit"><img src="https://i.gifer.com/SalN.gif" alt="" /></a>
+								</article>
+							</section>
 					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
 
-			<!-- Two -->
-				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Bachelor's degree</h2>
-							<p>Computer Science (2016 - 2020)</p>
-							<p>Universidad de Alcalá de Henares</p>
-							<p>Final Degree Project: Smart Building temperatures control and analysis via GPU computing (10/10)</p>
-							<h2>Master's degree</h2>
-							<p>Big Data & Businees Analytics (2020 - 2021)</p>
-							<p>Universidad Complutense de Madrid</p>
-						</header>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>City</h3>
+								<p>Madrid - Spain 🇪🇸</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(+34) 630 90 67 75</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:albertofernandezh98@gmail.com?subject=Contact">albertofernandezh98@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/alberto-fernandez-hernandez-3a3474136/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/AlbertoUAH" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Fernández Hernández, Alberto</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
 
-			<!-- Three -->
-				<section id="four" class="wrapper style1 special fade-up">
-					<div class="container">
-						<header class="major">
-							<h2>What about my portfolio?</h2>
-							<p>Here are some of my projects (as a freelance researcher) that I'd like to share! </p>
-						</header>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-medkit"></span>
-									<h3>Air pressure time series prediction</h3>
-									<p>Coming soon!</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-comment"></span>
-									<h3>Spanish news text summarization: our best tool against click-baits</h3>
-									<p>Coming soon!</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-flask"></span>
-									<h3>Cubilia cep lobortis</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-paper-plane"></span>
-									<h3>Non semper interdum</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-file"></span>
-									<h3>Odio laoreet accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-								<section class="col-4 col-6-medium col-12-xsmall">
-									<span class="icon solid alt major fa-lock"></span>
-									<h3>Massa arcu accumsan</h3>
-									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-								</section>
-							</div>
-						</div>
-						<footer class="major">
-							<ul class="actions special">
-								<li><a href="#" class="button">Magna sed feugiat</a></li>
-							</ul>
-						</footer>
-					</div>
-				</section>
-
-			<!-- Five -->
-				<section id="five" class="wrapper style2 special fade">
-					<div class="container">
-						<header>
-							<h2>Contact</h2>
-							<p>Send me an email!</p>
-						</header>
-						<form method="post" action="#" class="cta">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-								<div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-							</div>
-						</form>
-					</div>
-				</section>
-
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
-
-		</div>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
