@@ -113,16 +113,17 @@
 									<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 									<script>
 										// OpenAI API Setup
-										const openaiApiKey = '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';
+										const openaiApiKey = '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';
 										async function askChatGPT(var_class) {
 											var x = document.getElementsByClassName(var_class);
 											for (i = 0; i < x.length; i++) {
 												if (x[i].style.display == "block") {break;};
 											}
+											console.log(`Write a summary of the book "${x[i].id}". If you don't know it, write "I'm sorry, but I don't know the book you're referring to"`)
 											try {
 												const response = await axios.post('https://api.openai.com/v1/chat/completions', {
 												model: 'gpt-3.5-turbo',
-												messages: [{"role": "user", "content": `Do you know the book "${x[i].id}"? If so, write a summary of the book`}],
+												messages: [{"role": "user", "content": `Write a summary of the book "${x[i].id}", exploring the themes and ideas of the book in a paragraph."`}],
 												temperature: 1,
 												}, {
 												headers: {
