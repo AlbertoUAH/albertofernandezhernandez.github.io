@@ -80,13 +80,17 @@
 								<div id="tech_data_science">
 									<h2>Tech/Data Science</h2>
 									<div class="w3-content w3-display-container">
-										<img class="mySlides" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634885350l/59429554._SX318_.jpg" width="300" height="400">
-										<img class="mySlides" src="https://m.media-amazon.com/images/I/51dstfyKrUL.jpg" width="300" height="400">
-										<img class="mySlides" src="https://www.marcombo.com/wp-content/uploads/2019/02/9788426727206.jpg" width="300" height="400">
+										<img id="Natural Language Processing with Transformers" class="mySlides" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634885350l/59429554._SX318_.jpg" width="300" height="400">
+										<img id="Spark the definitive guide" class="mySlides" src="https://m.media-amazon.com/images/I/51dstfyKrUL.jpg" width="300" height="400">
+										<img id="Python Machine Learning Marcombo" class="mySlides" src="https://www.marcombo.com/wp-content/uploads/2019/02/9788426727206.jpg" width="300" height="400">
 
 										<button class="w3-display-left w3-khaki" onclick="plusDivs(-1)">&#10094;</button>
 										<button class="w3-display-right w3-khaki" onclick="plusDivs(+1)">&#10095;</button>
 									</div>
+									<br>
+									<ul class="actions special">
+										<li><button id="askChatGPT_ai_data_books" onclick="showLoadingMessage('askChatGPT_ai_data_books'); showPopup('mySlides', 'askChatGPT_ai_data_books')">Ask ChatGPT</button>
+									</ul>
 									<script>
 										var slideIndex = 1;
 										showDivs(slideIndex);
@@ -106,16 +110,61 @@
 											x[slideIndex-1].style.display = "block";
 										}
 									</script>
+									<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+									<script>
+										// OpenAI API Setup
+										const openaiApiKey = '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';
+										async function askChatGPT(var_class) {
+											var x = document.getElementsByClassName(var_class);
+											for (i = 0; i < x.length; i++) {
+												if (x[i].style.display == "block") {break;};
+											}
+											try {
+												const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+												model: 'gpt-3.5-turbo',
+												messages: [{"role": "user", "content": `Do you know the book "${x[i].id}"? If so, write a summary of the book`}],
+												temperature: 1,
+												}, {
+												headers: {
+													'Content-Type': 'application/json',
+													'Authorization': `Bearer ${openaiApiKey}`,
+												},
+												});
+												return response.data.choices[0].message.content;
+											} catch (error) {
+												console.error(error);
+												return "Error";
+											}
+										}
+
+										function showLoadingMessage(id) {
+											document.getElementById(id).innerHTML = 'Loading. Please, wait...';
+										}
+
+										function hideLoadingMessage(id) {
+											document.getElementById(id).innerHTML = 'Ask ChatGPT';
+										}
+
+										async function showPopup(var_class, id) {
+											const http_response = await askChatGPT(var_class);
+											hideLoadingMessage(id);
+											alert(http_response);
+										}
+									</script>
 								</div>
 								<br>
 								<div id="other_topics">
 									<h2>Other topics (economy, geopolitics)</h2>
 									<div class="w3-content w3-display-container">
-										<img class="mySlides2" src="https://images-na.ssl-images-amazon.com/images/I/A1qhBebbu6L.jpg" width="300px" height="400px">
-
+										<img id="Why Nations Fail" class="mySlides2" src="https://images-na.ssl-images-amazon.com/images/I/A1qhBebbu6L.jpg" width="300px" height="400px">
+										<img id="The Power of Geography, by Tim Marshall" class="mySlides2" src="https://m.media-amazon.com/images/I/51sVaaaPi8L.jpg" width="300px" height="400px">
 										<button class="w3-display-left w3-khaki" onclick="plusDivs2(-1)">&#10094;</button>
 										<button class="w3-display-right w3-khaki" onclick="plusDivs2(+1)">&#10095;</button>
 									</div>
+									<br>
+									<ul class="actions special">
+										<li><button id="askChatGPT_other_books" onclick="showLoadingMessage('askChatGPT_other_books'); showPopup('mySlides2', 'askChatGPT_other_books')">Ask ChatGPT</button>
+									</ul>
 									<script>
 										var slideIndex = 1;
 										showDivs2(slideIndex);
